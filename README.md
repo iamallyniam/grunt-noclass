@@ -28,10 +28,13 @@ grunt.initConfig({
     options: {
       keepclasses : ['array', 'of', 'class', 'names']
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+    files : [{
+      expand : true,
+      src : ["**/*.html"],
+      cwd : 'src/files',
+      dest : 'dest/files/'
+    }]
+  }
 });
 ```
 
@@ -51,10 +54,13 @@ grunt.initConfig({
     options: {
       keepclasses : ['save', 'safe']
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+    files : [{
+      expand : true,
+      src : ["**/*.html"],
+      cwd : 'src/files',
+      dest : 'dest/files/'
+    }]
+  }
 });
 ```
 

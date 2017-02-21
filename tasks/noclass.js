@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             var contents = grunt.file.read(src);
             var classless = noclass.classFromString(contents, options.keepclasses);
             grunt.file.write(file.dest, classless);
-            grunt.log.writeln('Classes removed from ' + f.src + ', and saved to ' + f.dest);
+            grunt.log.writeln('Classes removed from ' + src + ', and saved to ' + file.dest);
         });
         
     });

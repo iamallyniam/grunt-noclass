@@ -1,7 +1,7 @@
 {
   "name": "grunt-noclass",
   "description": "Remove class names from html files, usefull after inlining css for building mailers",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "homepage": "https://github.com/iamallyniam/grunt-noclass",
   "author": {
     "name": "Allyn Thomas",

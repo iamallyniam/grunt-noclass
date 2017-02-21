@@ -21,28 +21,18 @@ module.exports = function(grunt) {
             keepclasses: []
         });
 
-        // Iterate over all specified file groups.
-        this.files.forEach(function(f) {
-            // Concat specified files.
-            var src = f.src.filter(function(filepath) {
-                // Warn on and remove invalid source files (if nonull was set).
-                if (!grunt.file.exists(filepath)) {
-                    grunt.log.warn('Source file "' + filepath + '" not found.');
-                    return false;
-                } else {
-                    var content = grunt.file.read(filepath);
+        
+        this.files.forEach(function (file) {
+            var src = file.src[0];
+            if (!src) {
+                return;
+            }
             
-                    var classless = noclass.classFromFile(content, options.keepclasses);
-
-                    // Write the destination file.
-                    grunt.file.write(f.dest, classless);
-                    grunt.log.writeln('Classes removed from ' + f.src + ', and saved to ' + f.dest);
-                }
-            });
-            // Handle options.
-            
-            
-            
-        });
+            var contents = grunt.file.read(src);
+            var classless = noclass.classFromString(contents, options.keepclasses);
+            grunt.file.write(file.dest, classless);
+            grunt.log.writeln('Classes removed from ' + f.src + ', and saved to ' + f.dest);
+        }
+        
     });
 };

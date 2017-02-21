@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             var classless = noclass.classFromString(contents, options.keepclasses);
             grunt.file.write(file.dest, classless);
             grunt.log.writeln('Classes removed from ' + f.src + ', and saved to ' + f.dest);
-        }
+        });
         
     });
 };

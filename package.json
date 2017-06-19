@@ -39,7 +39,7 @@
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-nodeunit": "^0.3.3",
-    "noclass": "^1.0.1"
+    "noclass": "^1.0.3"
   },
   "keywords": [
     "gruntplugin"
